@@ -6,7 +6,7 @@
 /*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 18:38:41 by gofernan          #+#    #+#             */
-/*   Updated: 2017/12/06 20:24:44 by gofernan         ###   ########.fr       */
+/*   Updated: 2018/03/28 16:04:01 by gofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ size_t	ft_strlen(const char *s)
 	size_t i;
 
 	i = 0;
+
+	if (s == NULL)
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
