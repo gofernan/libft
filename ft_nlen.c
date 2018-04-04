@@ -6,11 +6,11 @@
 /*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 19:58:36 by gofernan          #+#    #+#             */
-/*   Updated: 2018/04/03 20:33:12 by gofernan         ###   ########.fr       */
+/*   Updated: 2018/04/04 11:38:13 by gofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_nlen(long nb)
+int	ft_nlen(long nb)
 {
 	int counter;
 
