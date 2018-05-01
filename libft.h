@@ -15,6 +15,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <wchar.h>
 
 typedef struct		s_list
 {
@@ -91,4 +92,5 @@ int					*ft_range(int min, int max);
 void				ft_swap(int *a, int *b);
 void				ft_is_negative(int n);
 int					ft_nlen(long nb);
+size_t				ft_wcslen(const wchar_t *s);
 #endif

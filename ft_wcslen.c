@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <wchar.h>
+#include "libft.h"
+
 size_t			ft_wcslen(const wchar_t *s)
 {
 	size_t counter;
 
 	counter = 0;
 	while (*s++ != 0)
-		i++;
-	return (i);
+		counter++;
+	return (counter);
 }
 
