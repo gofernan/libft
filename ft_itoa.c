@@ -46,9 +46,8 @@ char			*ft_itoa(int n)
 
 	j = 0;
 	i = ft_lenght(n);
-	if (!(str = (char *)malloc((sizeof(char) * i) + 1)))
+	if (!(str = ft_strnew(i)))
 		return (NULL);
-	str[i] = '\0';
 	if (n < 0)
 	{
 		str[0] = '-';

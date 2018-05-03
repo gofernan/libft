@@ -93,4 +93,7 @@ void				ft_swap(int *a, int *b);
 void				ft_is_negative(int n);
 int					ft_nlen(long nb);
 size_t				ft_wcslen(const wchar_t *s);
+char				*ft_ltoa(long nb);
+char				*ft_lltoa(long long nb);
+char				*ft_itoa_base(int nb, int base);
 #endif
