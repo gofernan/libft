@@ -73,11 +73,17 @@ FILES = ft_bzero.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_itoa.c \
+		ft_imaxtoa.c \
+		ft_uimaxtoa.c \
+		ft_ltoa.c \
+		ft_lltoa.c \
+		ft_itoa_base.c \
 		ft_atoi.c \
 		ft_lstmap.c \
 		ft_strsplit.c \
 		ft_div_mod.c \
-		ft_nlen.c
+		ft_nlen.c \
+		ft_wcslen.c \
 
 OES = $(FILES:.c=.o)
 

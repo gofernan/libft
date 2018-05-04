@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <wchar.h>
+# include <stdint.h>
 
 typedef struct		s_list
 {
@@ -96,4 +97,6 @@ size_t				ft_wcslen(const wchar_t *s);
 char				*ft_ltoa(long nb);
 char				*ft_lltoa(long long nb);
 char				*ft_itoa_base(int nb, int base);
+char				*ft_imaxtoa(intmax_t nb);
+char				*ft_uimaxtoa(uintmax_t nb);
 #endif
