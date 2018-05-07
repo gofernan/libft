@@ -34,9 +34,8 @@ char			*ft_ltoa(long nb)
 
 	j = 0;
 	i = ft_lenght(nb);
-	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(str = ft_strnew(i)))
 		return (NULL);
-	str[i] = '\0';
 	if (nb < 0)
 	{
 		str[0] = '-';

@@ -78,6 +78,8 @@ FILES = ft_bzero.c \
 		ft_ltoa.c \
 		ft_lltoa.c \
 		ft_itoa_base.c \
+		ft_imaxtoa_base.c \
+		ft_uimaxtoa_base.c \
 		ft_atoi.c \
 		ft_lstmap.c \
 		ft_strsplit.c \

@@ -35,13 +35,7 @@ char		*ft_octal(int nb)
 	while (i)
 	{
 		str[i-- -1] = (((unsigned int)nb << j) >> 29) + '0';
-		if (j == 2)
-		{
-			str[i-- -1] = ((unsigned int)nb >> 30) + '0';
-			j = 0;
-		}
-		else
-			j -= 3;
+		j -= 3;
 	}
 	return (str);
 }
