@@ -6,7 +6,7 @@
 /*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/06 15:45:01 by gofernan          #+#    #+#             */
-/*   Updated: 2018/04/06 15:48:17 by gofernan         ###   ########.fr       */
+/*   Updated: 2018/05/07 18:27:41 by gofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ size_t			ft_wcslen(const wchar_t *s)
 		counter++;
 	return (counter);
 }
-

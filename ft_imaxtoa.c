@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_imaxtoa.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/07 15:07:53 by gofernan          #+#    #+#             */
+/*   Updated: 2018/05/07 15:09:24 by gofernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int		ft_lenght(intmax_t a)
+static int			ft_lenght(intmax_t a)
 {
 	int		i;
 
@@ -25,7 +37,7 @@ static int		ft_lenght(intmax_t a)
 	return (i);
 }
 
-char		*ft_imaxtoa(intmax_t nb)
+char				*ft_imaxtoa(intmax_t nb)
 {
 	int			i;
 	int			j;

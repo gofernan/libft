@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_uimaxtoa.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/07 18:27:59 by gofernan          #+#    #+#             */
+/*   Updated: 2018/05/07 18:28:24 by gofernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int		ft_lenght(uintmax_t a)
+static int		ft_length(uintmax_t a)
 {
 	int		i;
 
@@ -13,7 +25,7 @@ static int		ft_lenght(uintmax_t a)
 	return (i);
 }
 
-char		*ft_uimaxtoa(uintmax_t nb)
+char			*ft_uimaxtoa(uintmax_t nb)
 {
 	int			i;
 	int			j;
@@ -21,7 +33,7 @@ char		*ft_uimaxtoa(uintmax_t nb)
 	char		*str;
 
 	j = 0;
-	i = ft_lenght(nb);
+	i = ft_length(nb);
 	if (!(str = ft_strnew(i)))
 		return (NULL);
 	while (i)

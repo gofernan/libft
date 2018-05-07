@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_uimaxtoa_base.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/07 18:25:49 by gofernan          #+#    #+#             */
+/*   Updated: 2018/05/07 18:42:46 by gofernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int		ft_lenght(uintmax_t a, int base)
+static int			ft_length(uintmax_t a, int base)
 {
 	int		i;
 
@@ -14,29 +26,31 @@ static int		ft_lenght(uintmax_t a, int base)
 	}
 	return (i);
 }
-static char		*ft_octal(uintmax_t nb, int sizeintmaxb)
+
+static char			*ft_octal(uintmax_t nb, int sizeintmaxb)
 {
-	int i;
-	int j;
-	int k;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	char	*str;
 
 	j = sizeintmaxb - 3;
 	k = j;
-	i = ft_lenght(nb, 8);
+	i = ft_length(nb, 8);
 	if (!(str = ft_strnew(i)))
 		return (NULL);
 	while (i)
 	{
-		str[i-- -1] = ((nb << j) >> k) + '0';
+		str[i-- - 1] = ((nb << j) >> k) + '0';
 		if (j < 3 && i > 0)
-			str[i-- -1] = (nb >> (k + 3 - j)) + '0';
+			str[i-- - 1] = (nb >> (k + 3 - j)) + '0';
 		else
 			j -= 3;
 	}
 	return (str);
 }
-static char		*ft_hexadecimal(uintmax_t nb, int sizeintmaxb, char lworup)
+
+static char			*ft_hexadecimal(uintmax_t nb, int sizeintmaxb, char lworup)
 {
 	int			i;
 	int			j;
@@ -46,22 +60,22 @@ static char		*ft_hexadecimal(uintmax_t nb, int sizeintmaxb, char lworup)
 
 	j = sizeintmaxb - 4;
 	k = j;
-	i = ft_lenght(nb, 16);
+	i = ft_length(nb, 16);
 	if (!(str = ft_strnew(i)))
 		return (NULL);
 	while (i)
 	{
 		tmp = (nb << j) >> k;
 		if (tmp > 9)
-			str[i-- -1] = tmp + lworup;
+			str[i-- - 1] = tmp + lworup;
 		else
-			str[i-- -1] = tmp + 48;
+			str[i-- - 1] = tmp + 48;
 		j -= 4;
 	}
 	return (str);
 }
 
-static char		*ft_decimal(uintmax_t nb)
+static char			*ft_decimal(uintmax_t nb)
 {
 	int			i;
 	int			j;
@@ -69,7 +83,7 @@ static char		*ft_decimal(uintmax_t nb)
 	char		*str;
 
 	j = 0;
-	i = ft_lenght(nb, 10);
+	i = ft_length(nb, 10);
 	if (!(str = ft_strnew(i)))
 		return (NULL);
 	while (i)
@@ -81,28 +95,31 @@ static char		*ft_decimal(uintmax_t nb)
 	return (str);
 }
 
-static char		*ft_binary(uintmax_t nb, int sizeintmaxb)
+static char			*ft_binary(uintmax_t nb, int sizeintmaxb)
 {
-	int i;
-	int j;
-	int k;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	char	*str;
 
 	j = sizeintmaxb - 1;
 	k = j;
-	i = ft_lenght(nb, 2);
+	i = ft_length(nb, 2);
 	if (!(str = ft_strnew(i)))
 		return (NULL);
 	while (i)
 		str[i-- - 1] = ((nb << j--) >> k) + '0';
 	return (str);
 }
-char			*ft_uimaxtoa_base(uintmax_t nb, int base, int alternative)
-{
-	int sizeintmaxb;
-	char lwcase = 87;
-	char upcase = 55;
 
+char				*ft_uimaxtoa_base(uintmax_t nb, int base, int alternative)
+{
+	int		sizeintmaxb;
+	char	lwcase;
+	char	upcase;
+
+	lwcase = 87;
+	upcase = 55;
 	sizeintmaxb = sizeof(uintmax_t) * 8;
 	if (base == 10)
 		return (ft_decimal(nb));

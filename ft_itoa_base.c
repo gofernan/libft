@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/07 16:19:36 by gofernan          #+#    #+#             */
+/*   Updated: 2018/05/07 18:13:13 by gofernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int		ft_lenght(int a, int base)
@@ -19,11 +31,12 @@ static int		ft_lenght(int a, int base)
 	}
 	return (i);
 }
-char		*ft_octal(int nb)
+
+char			*ft_octal(int nb)
 {
-	int i;
-	int j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	j = 29;
 	if (nb >= 0)
@@ -34,17 +47,18 @@ char		*ft_octal(int nb)
 		return (NULL);
 	while (i)
 	{
-		str[i-- -1] = (((unsigned int)nb << j) >> 29) + '0';
+		str[i-- - 1] = (((unsigned int)nb << j) >> 29) + '0';
 		j -= 3;
 	}
 	return (str);
 }
-char		*ft_hexadecimal(int nb)
+
+char			*ft_hexadecimal(int nb)
 {
-	int i;
-	int j;
-	int tmp;
-	char *str;
+	int		i;
+	int		j;
+	int		tmp;
+	char	*str;
 
 	j = 28;
 	if (nb >= 0)
@@ -57,15 +71,15 @@ char		*ft_hexadecimal(int nb)
 	{
 		tmp = ((unsigned int)nb << j) >> 28;
 		if (tmp > 9)
-			str[i-- -1] = tmp + 87;
+			str[i-- - 1] = tmp + 87;
 		else
-			str[i-- -1] = tmp + 48;
+			str[i-- - 1] = tmp + 48;
 		j -= 4;
 	}
 	return (str);
 }
 
-char		*ft_decimal(int nb)
+char			*ft_decimal(int nb)
 {
 	int		i;
 	int		j;
@@ -91,11 +105,11 @@ char		*ft_decimal(int nb)
 	return (str);
 }
 
-char		*ft_binary(int nb)
+char			*ft_binary(int nb)
 {
-	int i;
-	int j;
-	char *str;
+	int		i;
+	int		j;
+	char	*str;
 
 	j = 31;
 	if (nb >= 0)
@@ -108,6 +122,7 @@ char		*ft_binary(int nb)
 		str[i-- - 1] = (((unsigned int)nb << j--) >> 31) + '0';
 	return (str);
 }
+
 char			*ft_itoa_base(int nb, int base)
 {
 	if (base == 10)
