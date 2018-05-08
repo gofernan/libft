@@ -19,9 +19,14 @@ static int		ft_lenght(int a, int base)
 	i = 1;
 	if (a < 0)
 	{
+		while (a < -9)
+		{
+			a /= 10;
+			i++;
+		}
 		i++;
-		a = -a;
 	}
+	else
 	{
 		while (a > (base - 1))
 		{

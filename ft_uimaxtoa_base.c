@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int			ft_length(uintmax_t a, int base)
+static int			ft_length(uintmax_t a, unsigned int base)
 {
 	int		i;
 
@@ -112,7 +112,7 @@ static char			*ft_binary(uintmax_t nb, int sizeintmaxb)
 	return (str);
 }
 
-char				*ft_uimaxtoa_base(uintmax_t nb, int base, int alternative)
+char				*ft_uimaxtoa_base(uintmax_t nb, unsigned int base, int alternative)
 {
 	int		sizeintmaxb;
 	char	lwcase;

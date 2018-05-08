@@ -19,13 +19,20 @@ static int		ft_lenght(long a)
 	i = 1;
 	if (a < 0)
 	{
+		while (a < -9)
+		{
+			a /= 10;
+			i++;
+		}
 		i++;
-		a = -a;
 	}
-	while (a > 9)
+	else
 	{
-		a /= 10;
-		i++;
+		while (a > 9)
+		{
+			a /= 10;
+			i++;
+		}
 	}
 	return (i);
 }

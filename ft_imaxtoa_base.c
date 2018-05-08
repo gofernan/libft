@@ -19,13 +19,20 @@ static int			ft_lenght(intmax_t a, int base)
 	i = 1;
 	if (a < 0)
 	{
+		while (a < -9)
+		{
+			a /= 10;
+			i++;
+		}
 		i++;
-		a = -a;
 	}
-	while (a > (base - 1))
+	else
 	{
-		a /= base;
-		i++;
+		while (a > (base - 1))
+		{
+			a /= base;
+			i++;
+		}
 	}
 	return (i);
 }

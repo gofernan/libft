@@ -100,5 +100,5 @@ char				*ft_itoa_base(int nb, int base);
 char				*ft_imaxtoa(intmax_t nb);
 char				*ft_uimaxtoa(uintmax_t nb);
 char				*ft_imaxtoa_base(intmax_t nb, int base, int alternative);
-char				*ft_uimaxtoa_base(uintmax_t nb, int base, int alternative);
+char				*ft_uimaxtoa_base(uintmax_t nb, unsigned int base, int alternative);
 #endif
