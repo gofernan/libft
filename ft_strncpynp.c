@@ -13,5 +13,6 @@ char	*ft_strncpynp(char *dst, const char *src, size_t len)
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
 }

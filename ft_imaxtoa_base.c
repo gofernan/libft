@@ -105,12 +105,14 @@ static char			*ft_decimal(intmax_t nb)
 	if (nb < 0)
 	{
 		str[0] = '-';
-		nb = -nb;
 		j++;
 	}
 	while (i > j)
 	{
-		rest = nb % 10;
+		if (nb < 0)
+			rest = -(nb % 10);
+		else
+			rest = nb % 10;
 		str[i-- - 1] = (char)rest + '0';
 		nb = nb / 10;
 	}
