@@ -87,6 +87,7 @@ FILES = ft_bzero.c \
 		ft_nlen.c \
 		ft_wcslen.c \
 		ft_strncpynp.c \
+		ft_binary.c \
 
 OES = $(FILES:.c=.o)
 

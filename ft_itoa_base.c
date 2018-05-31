@@ -110,7 +110,7 @@ char			*ft_decimal(int nb)
 	return (str);
 }
 
-char			*ft_binary(int nb)
+/*char			*ft_binary(int nb)
 {
 	int		i;
 	int		j;
@@ -126,14 +126,14 @@ char			*ft_binary(int nb)
 	while (i)
 		str[i-- - 1] = (((unsigned int)nb << j--) >> 31) + '0';
 	return (str);
-}
+}*/
 
 char			*ft_itoa_base(int nb, int base)
 {
 	if (base == 10)
 		return (ft_decimal(nb));
-	else if (base == 2)
-		return (ft_binary(nb));
+	/*else if (base == 2)
+		return (ft_binary(nb));*/
 	else if (base == 16)
 		return (ft_hexadecimal(nb));
 	else if (base == 8)

@@ -95,23 +95,6 @@ static char			*ft_decimal(uintmax_t nb)
 	return (str);
 }
 
-static char			*ft_binary(uintmax_t nb, int sizeintmaxb)
-{
-	int		i;
-	int		j;
-	int		k;
-	char	*str;
-
-	j = sizeintmaxb - 1;
-	k = j;
-	i = ft_length(nb, 2);
-	if (!(str = ft_strnew(i)))
-		return (NULL);
-	while (i)
-		str[i-- - 1] = ((nb << j--) >> k) + '0';
-	return (str);
-}
-
 char				*ft_uimaxtoa_base(uintmax_t nb, unsigned int base, int alternative)
 {
 	int		sizeintmaxb;
@@ -123,8 +106,6 @@ char				*ft_uimaxtoa_base(uintmax_t nb, unsigned int base, int alternative)
 	sizeintmaxb = sizeof(uintmax_t) * 8;
 	if (base == 10)
 		return (ft_decimal(nb));
-	else if (base == 2)
-		return (ft_binary(nb, sizeintmaxb));
 	else if (base == 16 && !alternative)
 		return (ft_hexadecimal(nb, sizeintmaxb, lwcase));
 	else if (base == 16)
