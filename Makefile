@@ -6,7 +6,7 @@
 #    By: gofernan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/13 19:11:35 by gofernan          #+#    #+#              #
-#    Updated: 2018/04/03 20:33:34 by gofernan         ###   ########.fr        #
+#    Updated: 2018/06/02 18:52:24 by gofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,13 +73,11 @@ FILES = ft_bzero.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_itoa.c \
-		ft_imaxtoa.c \
-		ft_uimaxtoa.c \
+		ft_uitoa.c \
 		ft_ltoa.c \
 		ft_lltoa.c \
 		ft_itoa_base.c \
-		ft_imaxtoa_base.c \
-		ft_uimaxtoa_base.c \
+		ft_uitoab.c \
 		ft_atoi.c \
 		ft_lstmap.c \
 		ft_strsplit.c \

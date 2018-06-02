@@ -1,64 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_imaxtoa.c                                       :+:      :+:    :+:   */
+/*   ft_uitoa.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/07 15:07:53 by gofernan          #+#    #+#             */
-/*   Updated: 2018/05/07 15:09:24 by gofernan         ###   ########.fr       */
+/*   Created: 2018/05/07 18:27:59 by gofernan          #+#    #+#             */
+/*   Updated: 2018/05/07 18:28:24 by gofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_lenght(intmax_t a)
+static int		ft_length(uintmax_t a)
 {
 	int		i;
 
 	i = 1;
-	if (a < 0)
+	while (a > 9)
 	{
-		while (a < -9)
-		{
-			a /= 10;
-			i++;
-		}
+		a /= 10;
 		i++;
-	}
-	else
-	{
-		while (a > 9)
-		{
-			a /= 10;
-			i++;
-		}
 	}
 	return (i);
 }
 
-char				*ft_imaxtoa(intmax_t nb)
+char			*ft_uitoa(uintmax_t nb)
 {
 	int			i;
 	int			j;
-	intmax_t	rest;
+	uintmax_t	rest;
 	char		*str;
 
 	j = 0;
-	i = ft_lenght(nb);
+	i = ft_length(nb);
 	if (!(str = ft_strnew(i)))
 		return (NULL);
-	if (nb < 0)
+	while (i)
 	{
-		str[0] = '-';
-		j++;
-	}
-	while (i > j)
-	{
-		if (nb < 0)
-			rest = -(nb % 10);
-		else
-			rest = nb % 10;
+		rest = nb % 10;
 		str[i-- - 1] = (char)rest + '0';
 		nb = nb / 10;
 	}

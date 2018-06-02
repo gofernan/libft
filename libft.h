@@ -6,7 +6,7 @@
 /*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 19:31:32 by gofernan          #+#    #+#             */
-/*   Updated: 2018/04/04 11:37:48 by gofernan         ###   ########.fr       */
+/*   Updated: 2018/06/02 19:35:55 by gofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-char				*ft_itoa(int n);
+char				*ft_itoa(intmax_t n);
 int					ft_atoi(const char *str);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_strsplit(char const *s, char c);
@@ -96,11 +96,9 @@ int					ft_nlen(long nb);
 size_t				ft_wcslen(const wchar_t *s);
 char				*ft_ltoa(long nb);
 char				*ft_lltoa(long long nb);
-char				*ft_itoa_base(int nb, int base);
-char				*ft_imaxtoa(intmax_t nb);
-char				*ft_uimaxtoa(uintmax_t nb);
-char				*ft_imaxtoa_base(intmax_t nb, int base, int alternative);
-char				*ft_uimaxtoa_base(uintmax_t nb, unsigned int base, int alternative);
+char				*ft_uitoa(uintmax_t nb);
+char				*ft_itoa_base(intmax_t nb, int base, int alternative);
+char				*ft_uitoab(uintmax_t nb, unsigned int base, int alternative);
 char				*ft_strncpynp(char *dst, const char *src, size_t len);
 char				*ft_binary(intmax_t nb);
 #endif
