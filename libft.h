@@ -97,8 +97,8 @@ size_t				ft_wcslen(const wchar_t *s);
 char				*ft_ltoa(long nb);
 char				*ft_lltoa(long long nb);
 char				*ft_uitoa(uintmax_t nb);
-char				*ft_itoa_base(intmax_t nb, int base, int alternative);
-char				*ft_uitoab(uintmax_t nb, unsigned int base, int alternative);
+char				*ft_itoa_base(intmax_t nb, int base, int alt);
+char				*ft_uitoab(uintmax_t nb, unsigned int base, int alt);
 char				*ft_strncpynp(char *dst, const char *src, size_t len);
 char				*ft_binary(intmax_t nb);
 #endif

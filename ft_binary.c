@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_binary.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/06/02 22:28:20 by gofernan          #+#    #+#             */
+/*   Updated: 2018/06/02 22:28:57 by gofernan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int			ft_length(intmax_t a, int base)
+static int		ft_length(intmax_t a, int base)
 {
 	int	i;
 
@@ -25,7 +37,7 @@ static int			ft_length(intmax_t a, int base)
 	return (i);
 }
 
-char		*ft_binary(intmax_t nb)
+char			*ft_binary(intmax_t nb)
 {
 	int		i;
 	int		j;

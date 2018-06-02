@@ -119,7 +119,7 @@ static char			*ft_decimal(intmax_t nb)
 	return (str);
 }
 
-char				*ft_itoa_base(intmax_t nb, int base, int alternative)
+char				*ft_itoa_base(intmax_t nb, int base, int alt)
 {
 	int		sizeintmaxb;
 	char	lwcase;
@@ -130,7 +130,7 @@ char				*ft_itoa_base(intmax_t nb, int base, int alternative)
 	sizeintmaxb = sizeof(intmax_t) * 8;
 	if (base == 10)
 		return (ft_decimal(nb));
-	else if (base == 16 && !alternative)
+	else if (base == 16 && !alt)
 		return (ft_hexadecimal(nb, sizeintmaxb, lwcase));
 	else if (base == 16)
 		return (ft_hexadecimal(nb, sizeintmaxb, upcase));
