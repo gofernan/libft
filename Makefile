@@ -10,15 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY : all fclean clean re
 
 NAME = libft.a
-
+ODIR = objs
+SDIR = srcs
+IDIR = include
+_DEPS = libft.h
+DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
+CC = clang
 FLAGS = -Wall -Wextra -Werror
-
-OPTION = -c
-
-FILES = ft_bzero.c \
+_SRCS = ft_bzero.c \
 		ft_memset.c \
 		ft_memmove.c \
 		ft_strlen.c \
@@ -87,17 +88,23 @@ FILES = ft_bzero.c \
 		ft_strncpynp.c \
 		ft_binary.c \
 
-OES = $(FILES:.c=.o)
+_OBJS = $(_SRCS:.c=.o)
+OBJS = $(patsubst %, $(ODIR)/%, $(_OBJS))
 
 all: $(NAME)
 
-$(NAME): $(OES)
-	ar rc $(NAME)  $(OES)
+$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
+	$(CC) -c $(FLAGS) $< -o $@
 
-%.o: %.c
-	@gcc $(FLAGS) -c $<
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
+
 clean:
-	/bin/rm -f $(OES)
+	/bin/rm -f $(OBJS)
+
 fclean: clean
 	/bin/rm -f $(NAME)
+
 re: fclean all
+
+.PHONY : all fclean clean re
