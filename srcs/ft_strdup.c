@@ -6,7 +6,7 @@
 /*   By: gofernan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 18:41:47 by gofernan          #+#    #+#             */
-/*   Updated: 2017/11/17 20:42:12 by gofernan         ###   ########.fr       */
+/*   Updated: 2018/10/02 23:32:10 by gofernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ char	*ft_strdup(const char *s)
 	}
 	c = (char *)malloc((count + 1) * sizeof(char));
 	if (c == NULL)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (i < count)
 	{
