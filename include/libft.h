@@ -101,4 +101,5 @@ char				*ft_itoa_base(intmax_t nb, int base, int alt);
 char				*ft_uitoab(uintmax_t nb, unsigned int base, int alt);
 char				*ft_strncpynp(char *dst, const char *src, size_t len);
 char				*ft_binary(intmax_t nb);
+int					ft_abs(int nb);
 #endif
