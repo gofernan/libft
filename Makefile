@@ -87,6 +87,7 @@ _SRCS = ft_bzero.c \
 		ft_wcslen.c \
 		ft_strncpynp.c \
 		ft_binary.c \
+		ft_abs.c
 
 _OBJS = $(_SRCS:.c=.o)
 OBJS = $(patsubst %, $(ODIR)/%, $(_OBJS))
