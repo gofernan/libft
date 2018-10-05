@@ -6,7 +6,7 @@
 #    By: gofernan <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/13 19:11:35 by gofernan          #+#    #+#              #
-#    Updated: 2018/06/02 18:52:24 by gofernan         ###   ########.fr        #
+#    Updated: 2018/10/05 15:33:23 by gofernan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ IDIR = include
 _DEPS = libft.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
 CC = clang
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 _SRCS = ft_bzero.c \
 		ft_memset.c \
 		ft_memmove.c \
