@@ -17,6 +17,9 @@
 # include <unistd.h>
 # include <wchar.h>
 # include <stdint.h>
+# include <fcntl.h>
+# define BUFF_SIZE 999
+
 
 typedef struct		s_list
 {
@@ -24,6 +27,14 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_listfd
+{
+	char			*content;
+	int				fdnum;
+	struct s_listfd	*next;
+}					t_listfd;
+
 void				ft_bzero(void *s, size_t n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
@@ -102,4 +113,6 @@ char				*ft_uitoab(uintmax_t nb, unsigned int base, int alt);
 char				*ft_strncpynp(char *dst, const char *src, size_t len);
 char				*ft_binary(intmax_t nb);
 int					ft_abs(int nb);
+int					get_next_line(const int fd, char **line);
+
 #endif
