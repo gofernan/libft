@@ -15,8 +15,14 @@ NAME = libft.a
 ODIR = objs
 SDIR = srcs
 IDIR = include
+
+PFDIR = ft_printf
+ODIRPF = $(PFDIR)/objs
+SDIRPF = $(PFDIR)/srcs
+
 _DEPS = libft.h
 DEPS = $(patsubst %, $(IDIR)/%, $(_DEPS))
+
 CC = clang
 FLAGS = -Wall -Wextra -Werror -g
 _SRCS = ft_bzero.c \
@@ -90,19 +96,74 @@ _SRCS = ft_bzero.c \
 		ft_abs.c \
 		get_next_line.c
 
+_FTPF =	checkstr.c \
+		checkstr_inside.c \
+		checkstr_argorder.c \
+		checkstr_flags.c \
+		checkstr_fwidth.c \
+		checkstr_prec.c \
+		checkstr_length_hh.c \
+		checkstr_length_h.c \
+		checkstr_length_ll.c \
+		checkstr_length_l.c \
+		checkstr_length_j.c \
+		checkstr_length_t.c \
+		checkstr_length_z.c \
+		checkstr_length_q.c \
+		convsp.c \
+		sconv.c \
+		field_width.c \
+		field_width_num.c \
+		ft_printf.c \
+		initialize_struct.c \
+		precf.c \
+		lsconv.c \
+		utf8conv.c \
+		onebyteconv.c \
+		precfw.c \
+		diconv.c \
+		precdigits.c \
+		flag_space.c \
+		flag_plus.c \
+		flag_sharp.c \
+		uconv.c \
+		oconv.c \
+		xconv.c \
+		cconv.c \
+		lcconv.c \
+		percent.c \
+		pconv.c \
+		bconv.c \
+		store_write.c \
+		checkstr_allargs.c \
+		store_arglist.c \
+		retr_arglist.c \
+		sel_arglist.c \
+		free_struct.c \
+		checkstr_colors.c \
+		checkstr_findcolor.c \
+		fill_defaultv.c
+
 _OBJS = $(_SRCS:.c=.o)
 OBJS = $(patsubst %, $(ODIR)/%, $(_OBJS))
+
+_OBJSPF = $(_FTPF:.c=.o)
+OBJSPF = $(patsubst %, $(ODIRPF)/%, $(_OBJSPF))
 
 all: $(NAME)
 
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
-	$(CC) -c $(FLAGS) $< -o $@
+	$(CC) -c $(FLAGS) -I$(DEPS) $< -o $@
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(ODIRPF)/%.o: $(SDIRPF)/%.c $(DEPS)
+	$(CC) -c $(FLAGS) -I$(DEPS) $< -o $@
+
+$(NAME): $(OBJS) $(OBJSPF)
+	ar rc $(NAME) $(OBJS) $(OBJSPF)
 
 clean:
 	/bin/rm -f $(OBJS)
+	/bin/rm -f $(OBJSPF)
 
 fclean: clean
 	/bin/rm -f $(NAME)
